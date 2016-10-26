@@ -1,28 +1,18 @@
+from utilities import parsexml, api_pattern
 import re
-import json
-import xml.etree.ElementTree as ET
 
-api_pattern = re.compile("[_a-zA-Z][_a-zA-Z0-9]*\.[_a-zA-Z][_a-zA-Z0-9]*\(")
-
-tree = ET.parse("Posts.xml")
+tree = parsexml("../Data_set/Posts_HTML_FREE.xml")
 root = tree.getroot()
 
-f_post = open("Posts.json", "w+", encoding = 'utf-8')
-f_api = open("APIs.json", "w+", encoding = 'utf-8')
-
-count = 0
-
-for child in root:
-    json_str = json.dumps(child.attrib, ensure_ascii = False)
-    match_obj = api_pattern.search(child.get("Body"))
-    if match_obj is not None:
-        f_api.write(json_str + "\n")
-        count += 1
+api_count = 0
+for row in root.findall("row"):
+    match_obj = api_pattern.search(row.get("Body"))
+    if match_obj is None:
+        root.remove(row)
     else:
-        f_post.write(json_str + "\n")
+        api_count += 1
 
-f_api.close()
-f_post.close()
+tree.write("../Data_set/APIs.xml")
 
-print(count)
+print(str(api_count) + " posts with at least one API extracted")
 
