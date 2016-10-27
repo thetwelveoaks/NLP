@@ -32,9 +32,8 @@ for row in rows:
             count += 1
         pos = match_obj.end();
         match_obj = utilities.api_pattern.search(body, pos)
-
     row.set("Body", body)
 
 tree.write("../dataset/APIs_Auto_Annotated.xml", encoding = "utf-8")
 
-print(count)
+print("Total APIs annotated: " + str(count))
