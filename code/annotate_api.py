@@ -23,11 +23,13 @@ for row in rows:
     pos = 0
     match_obj = utilities.api_pattern.search(body, pos)
     while pos < len(body) and (match_obj is not None):
-        prev = match_obj.string[:match_obj.start()]
-        mid = "<api>" + match_obj.string[match_obj.start(): match_obj.end()] + "</api>"
-        last = match_obj.string[match_obj.end():]
-        body = prev + mid + last
-        count += 1
+        match_excep = utilities.excep_pattern.search(match_obj.string[match_obj.start(): match_obj.end()])
+        if match_excep is None:
+            prev = match_obj.string[:match_obj.start()]
+            mid = "<api>" + match_obj.string[match_obj.start(): match_obj.end()] + "</api>"
+            last = match_obj.string[match_obj.end():]
+            body = prev + mid + last
+            count += 1
         pos = match_obj.end();
         match_obj = utilities.api_pattern.search(body, pos)
 

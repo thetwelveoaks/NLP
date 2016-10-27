@@ -12,3 +12,4 @@ def cleanhtml(raw_html):
     return cleantext
 
 api_pattern = re.compile("[_a-zA-Z][_a-zA-Z0-9]*\.[_a-zA-Z][_a-zA-Z0-9]*\(+.*?\)+")
+excep_pattern = re.compile("\([_a-zA-Z][_a-zA-Z0-9]*\.java:[0-9]+?\)")
