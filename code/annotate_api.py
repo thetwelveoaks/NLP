@@ -3,7 +3,7 @@ import re
 import random
 
 
-tree = utilities.parsexml("../Data_set/APIs.xml")
+tree = utilities.parsexml("../dataset/APIs.xml")
 root = tree.getroot()
 rows = []
 for row in root.findall("row"):
@@ -13,6 +13,8 @@ random.seed(12345)
 random.shuffle(rows)
 for row in rows[100:]:
     root.remove(row)
+
+tree.write("../dataset/APIs_Selected.xml", encoding = "utf-8")
 
 rows = rows[:100]
 
@@ -46,6 +48,6 @@ for row in rows:
 ##    if newbody != "":
 ##        row.set("Body", newbody)
         
-tree.write("../Data_set/APIs_Annotated.xml")
+tree.write("../dataset/APIs_Annotated.xml", encoding = "utf-8")
 
 print(count)
