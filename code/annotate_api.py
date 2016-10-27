@@ -2,7 +2,6 @@ import utilities
 import re
 import random
 
-
 tree = utilities.parsexml("../dataset/APIs.xml")
 root = tree.getroot()
 rows = []
@@ -14,7 +13,7 @@ random.shuffle(rows)
 for row in rows[100:]:
     root.remove(row)
 
-tree.write("../dataset/APIs_Selected.xml", encoding = "utf-8")
+tree.write("../dataset/API_Sample.xml", encoding = "utf-8")
 
 rows = rows[:100]
 
@@ -33,21 +32,7 @@ for row in rows:
         match_obj = utilities.api_pattern.search(body, pos)
 
     row.set("Body", body)
-##    print(body)
-##    newbody = input("Press Enter to continue...\n")
-##    if newbody != "":
-##        row.set("Body", newbody)
-##    else:
-##        row.set("Body", body)
-##    f_body.write(body)
 
-
-##for row in root.findall("row"):
-##    print(row.get("Body"))
-##    newbody = input("Press Enter to continue...")
-##    if newbody != "":
-##        row.set("Body", newbody)
-        
-tree.write("../dataset/APIs_Annotated.xml", encoding = "utf-8")
+tree.write("../dataset/APIs_Auto_Annotated.xml", encoding = "utf-8")
 
 print(count)

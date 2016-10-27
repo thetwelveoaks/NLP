@@ -11,8 +11,4 @@ def cleanhtml(raw_html):
     cleantext = re.sub(cleanr, '', raw_html)
     return cleantext
 
-regex = "[_a-zA-Z][_a-zA-Z0-9]*\.[_a-zA-Z][_a-zA-Z0-9]*\([_a-zA-z0-9\.+\-*/%]*\)"
-api_pattern = re.compile(regex)
-
-
-##api_pattern = re.compile("[_a-zA-Z][_a-zA-Z0-9]*\.[_a-zA-Z][_a-zA-Z0-9]*\(.*\)")
+api_pattern = re.compile("[_a-zA-Z][_a-zA-Z0-9]*\.[_a-zA-Z][_a-zA-Z0-9]*\(+.*?\)+")
