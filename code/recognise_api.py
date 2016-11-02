@@ -15,7 +15,12 @@ recogniser_root = recogniser_tree.getroot()
 rec_set = set()
 
 for row in recogniser_root.findall("row"):
-    rec_set |= set(utilities.api_pattern.findall(row.get("Body")))
+    iterator = utilities.api_pattern.finditer(row.get("Body"))
+    for match in iterator:
+        temp = []
+        temp.append(match.group())
+        rec_set |= set(temp)
+##    rec_set |= set(utilities.api_pattern.findall(row.get("Body")))
 
 falsepos = len(rec_set.difference(api_set)) # match what should not be matched
 falseneg = len(api_set.difference(rec_set)) # not match what should be matched
