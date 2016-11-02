@@ -24,12 +24,12 @@ print("False Positives: " + str(falsepos))
 print("False Negatives: " + str(falseneg))
 print("Total unique APIs: " + str(len(api_set)))
 
-f_falpos = open("../dataset/falpos.txt", "w")
+f_falpos = open("../dataset/falpos.txt", "w", encoding = 'utf-8')
 for api in rec_set.difference(api_set):
     f_falpos.write(str(api) + "\n")
 f_falpos.close()
 
-f_falneg = open("../dataset/falneg.txt", "w")
+f_falneg = open("../dataset/falneg.txt", "w", encoding='utf-8')
 for api in api_set.difference(rec_set):
     f_falneg.write(str(api) + "\n")
 f_falneg.close()
