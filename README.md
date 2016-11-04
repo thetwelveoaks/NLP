@@ -17,15 +17,17 @@ In your downloads, the file 'dataset/Posts.xml' is the original dataset we downl
 
 Below shows a detailed explanation of each file under 'dataset/'. 
 
-API_Sample.xml				The selected 100 posts for API recognition without annotation
-APIs.xml					All posts that contain at least one API
-APIs_Auto_Annotated.xml		The auto-annotated results
-APIs_Fully_Annotated.xml	The auto_annotated results after manual inspection
-Posts.xml					The original corpus
-Posts_HTML_FREE.xml			Intermediate results after trimming HTML tags
-falneg.txt					All false negatives after API recognition
-falpos.txt					All false positives after API recognition
-stop_word.txt				A list of stop words defined by NLTK
+| File Name  | Explanation |
+| ------------- | ------------- |
+| API_Sample.xml | The selected 100 posts for API recognition without annotation  |
+|APIs.xml			 | All posts that contain at least one API|
+|APIs_Auto_Annotated.xml |	The auto-annotated results|
+|APIs_Fully_Annotated.xml	|The auto_annotated results after manual inspection|
+|Posts.xml		|			The original corpus|
+|Posts_HTML_FREE.xml	|		Intermediate results after trimming HTML tags|
+|falneg.txt		|			All false negatives after API recognition|
+|falpos.txt			|		All false positives after API recognition|
+|stop_word.txt	|			A list of stop words defined by NLTK|
 
 All our codes are written in Python 3.5.2. Please make sure you have the correct version of Python interpreter installed. 
 To run our codes is simple. In command line, just use the following command
@@ -36,15 +38,21 @@ to run a particular file. You may also use Python IDLE.
 ## Note: all source codes are written on a Macintosh machine. As such, the format of the file path may be different if you run our codes on a Windows machine. Please change all the file paths if necessary ##
 
 You may run our source code files in the following orders:
-python data_collection.py 	To get statistics about the corpus
-python pos_stem.py 			To get the results for stemming and POS tagging
+
+| File Name  | Explanation |
+| ------------- | ------------- |
+|python data_collection.py |	To get statistics about the corpus|
+|python pos_stem.py 	|		To get the results for stemming and POS tagging|
 
 For API annotation and API recognition:
-python remove_html.py  		To remove HTML tags; output to 'dataset/Posts_HTML_FREE.xml'
-python extract_api.py 		To get posts containing at least one API; output to 'dataset/APIs.xml'
-python annotate_api.py 		To randomly select 100 posts and apply auto annotation; output to 'dataset/API_Sample.xml' and 'dataset/APIs_Auto_Annotated.xml'
-python recognise_api.py 	To recognise APIs; output false positives to 'dataset/falpos.txt'; output false negatives to 'dataset/falneg.txt'
-utilities.py 				Contains common functions and constants; you don't need to run it. 
+
+| File Name  | Explanation |
+| ------------- | ------------- |
+|python remove_html.py  |		To remove HTML tags; output to 'dataset/Posts_HTML_FREE.xml'|
+|python extract_api.py 	|	To get posts containing at least one API; output to 'dataset/APIs.xml'|
+|python annotate_api.py 	|	To randomly select 100 posts and apply auto annotation; output to 'dataset/API_Sample.xml' and 'dataset/APIs_Auto_Annotated.xml'|
+|python recognise_api.py |	To recognise APIs; output false positives to 'dataset/falpos.txt'; output false negatives to 'dataset/falneg.txt'|
+|utilities.py 		|		Contains common functions and constants; you don't need to run it. |
 
 # 4. Output Interpretation#
 
