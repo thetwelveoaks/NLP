@@ -8,6 +8,7 @@ rows = []
 for row in root.findall("row"):
     rows.append(row)
 
+# Randomly select 100 posts
 random.seed(12345)
 random.shuffle(rows)
 for row in rows[100:]:
@@ -17,6 +18,7 @@ tree.write("../dataset/API_Sample.xml", encoding = "utf-8")
 
 rows = rows[:100]
 
+# Auto annotate
 count = 0
 for row in rows:
     body = row.get("Body")
