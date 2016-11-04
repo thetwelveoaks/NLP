@@ -1,8 +1,8 @@
-1. Third Party Library
+# 1. Third Party Library#
 
 We used the Natural Language Toolkit (NLTK) for this assignment. The installation guide can be found at NLTK's website at www.nltk.org/install.html. 
 
-2. Dataset
+# 2. Dataset#
 
 We have all our source codes and datasets stored in our Git repository. You may download a zip version from https://github.com/thetwelveoaks/NLP by choosing 'Clone or download'->'Download ZIP'. 
 
@@ -13,7 +13,7 @@ SSH: git@github.com:thetwelveoaks/NLP.git
 
 In your downloads, the file 'dataset/Posts.xml' is the original dataset we downloaded from Stack Exchange data dump. The file 'dataset/APIs_Fully_Annotated.xml' is our annotation results after auto-annotation and manual inspection. 
 
-3. Directory Listing and Installation Guide
+# 3. Directory Listing and Installation Guide#
 
 Below shows a detailed explanation of each file under 'dataset/'. 
 
@@ -46,7 +46,7 @@ python annotate_api.py 		To randomly select 100 posts and apply auto annotation;
 python recognise_api.py 	To recognise APIs; output false positives to 'dataset/falpos.txt'; output false negatives to 'dataset/falneg.txt'
 utilities.py 				Contains common functions and constants; you don't need to run it. 
 
-4. Output Interpretation
+# 4. Output Interpretation#
 
 For data collection, stemming and POS tagging, the output is directed to Python terminal. There are labels in front of each output, so they should be self-explanatory. 
 
