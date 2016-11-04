@@ -1,7 +1,9 @@
 1. Third Party Library
+
 We used the Natural Language Toolkit (NLTK) for this assignment. The installation guide can be found at NLTK's website at www.nltk.org/install.html. 
 
 2. Dataset
+
 We have all our source codes and datasets stored in our Git repository. You may download a zip version from https://github.com/thetwelveoaks/NLP by choosing 'Clone or download'->'Download ZIP'. 
 
 Alternatively, you may clone our Git repository. First please make sure you have Git installed on your local computer. The comprehensive Git installation guide can be found at https://git-scm.com/book/en/v2/Getting-Started-Installing-Git. Choose a method that suits your platform. 
@@ -45,6 +47,7 @@ python recognise_api.py 	To recognise APIs; output false positives to 'dataset/f
 utilities.py 				Contains common functions and constants; you don't need to run it. 
 
 4. Output Interpretation
+
 For data collection, stemming and POS tagging, the output is directed to Python terminal. There are labels in front of each output, so they should be self-explanatory. 
 
 For API annotation and recognition, however, the output is redirected to files. The final false positives and false negatives are collected in 'dataset/falpos.txt' and 'dataset/falneg.txt'. Each line represents an API that causes that error. 
