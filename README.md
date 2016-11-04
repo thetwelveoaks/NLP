@@ -22,7 +22,7 @@ Below shows a detailed explanation of each file under 'dataset/'.
 | API_Sample.xml | The selected 100 posts for API recognition without annotation  |
 |APIs.xml			 | All posts that contain at least one API|
 |APIs_Auto_Annotated.xml |	The auto-annotated results|
-|APIs_Fully_Annotated.xml	|The auto_annotated results after manual inspection|
+|APIs_Fully_Annotated.xml	|The auto-annotated results after manual inspection|
 |Posts.xml		|			The original corpus|
 |Posts_HTML_FREE.xml	|		Intermediate results after trimming HTML tags|
 |falneg.txt		|			All false negatives after API recognition|
@@ -31,22 +31,21 @@ Below shows a detailed explanation of each file under 'dataset/'.
 
 All our codes are written in Python 3.5.2. Please make sure you have the correct version of Python interpreter installed. 
 To run our codes is simple. In command line, just use the following command
-python 'file_name.py' or
-python3 'file_name.py'
+### python file_name.py ###
 to run a particular file. You may also use Python IDLE. 
 
-## Note: all source codes are written on a Macintosh machine. As such, the format of the file path may be different if you run our codes on a Windows machine. Please change all the file paths if necessary ##
+### Note: all source codes are written on a Macintosh machine. As such, the format of the file path may be different if you run our codes on a Windows machine. Please change all the file paths if necessary ###
 
 You may run our source code files in the following orders:
 
-| File Name  | Explanation |
+| Command  | Explanation |
 | ------------- | ------------- |
 |python data_collection.py |	To get statistics about the corpus|
 |python pos_stem.py 	|		To get the results for stemming and POS tagging|
 
 For API annotation and API recognition:
 
-| File Name  | Explanation |
+| Command  | Explanation |
 | ------------- | ------------- |
 |python remove_html.py  |		To remove HTML tags; output to 'dataset/Posts_HTML_FREE.xml'|
 |python extract_api.py 	|	To get posts containing at least one API; output to 'dataset/APIs.xml'|
